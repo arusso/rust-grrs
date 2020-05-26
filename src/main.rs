@@ -1,4 +1,3 @@
-use std::fmt::*;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::Lines;
@@ -15,9 +14,6 @@ struct Cli {
     #[structopt(parse(from_os_str))]
     path: std::path::PathBuf,
 }
-
-#[derive(Debug)]
-struct CustomError(String);
 
 fn main() -> Result<(), ExitFailure>  {
     let args = Cli::from_args();
